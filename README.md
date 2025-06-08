@@ -57,12 +57,17 @@
 
 ```
 SysScope/
-├── backup/                 # Gesicherte Snapshots
-├── snapshots/              # Erstellte Snapshots
-├── .gitignore              # Git Ignore-Datei
-├── README.md               # Dokumentation
-├── requirements.txt        # Benötigte Python-Abhängigkeiten
-└── sys_scope.py            # Hauptprogramm
+├── backup/                  # Gesicherte Snapshots
+├── snapshots/               # Erstellte Snapshots
+├── .github/
+│   └── workflows/
+│       └── sys-scope.yml    # CI Workflow YAML
+├── .gitignore               # Git-Ignore Datei
+├── README.md                # Projektdokumentation
+├── LICENSE                  # Lizensierung
+├── Security          
+├── requirements.txt         # Python Abhängigkeiten
+└── SysScope.py              # Hauptprogramm
 ```
 
 <br>
@@ -108,6 +113,25 @@ python sys_scope.py
 ## Benutzung
    - Beim Start von SysScope öffnet sich ein interaktives Terminalmenü, aus dem du alle Funktionen bequem auswählen und ausführen kannst.
 
+| Option                         | Beschreibung                                       |
+|          :---                  |                    :---:                           |
+|                                |                                                    |
+| Snapshot erstellen             | Speichert aktuellen Paketstand als Snapshot.       |
+| Ereignisse anzeigen            | Zeigt alle gespeicherten Ereignisse.               |
+| Systemkonfiguration prüfen     | Zeigt detaillierte Systeminformationen.            |
+| Snapshots auflisten            | Listet gespeicherte Snapshots auf.                 |
+| Snapshots sichern              | Sichert Snapshots in Backup-Ordner.                |
+| Speicherplatz prüfen           | Zeigt aktuellen Speicherplatzverbrauch.            |
+| Prozessliste anzeigen          | Listet alle laufenden Prozesse auf.                |
+| Systemlogs anzeigen            | Gibt den Inhalt der Systemlogs aus.                |
+| Netzwerkverbindungen anzeigen  | Listet aktive Netzwerkverbindungen auf.            |
+| Nutzerinformationen anzeigen   | Zeigt eingeloggte Benutzer.                        |
+| Offene Ports prüfen            | Prüft offene Netzwerkports.                        |
+| Firewall-Status anzeigen       | Zeigt Firewall-Status an.                          |
+| Systemzeit anzeigen            | Zeigt aktuelle Systemzeit an.                      |
+| CPU-Auslastung anzeigen        | Prüft aktuelle CPU-Auslastung.                     |
+| RAM-Nutzung anzeigen           | Zeigt aktuelle RAM-Auslastung an.                  |
+
 <br>
 
 ---
@@ -133,3 +157,63 @@ pip install colorama
 
 ## Lizenz
    - Dieses Projekt steht unter der MIT-Lizenz. Weitere Informationen findest du in der Datei `LICENSE` im Repository.
+
+<br>
+
+---
+
+<br>
+
+## ❓ FAQs
+
+### Welche Systeme werden unterstützt?
+SysScope wurde speziell für Kali Linux entwickelt, läuft aber grundsätzlich auch auf anderen Debian-basierten Systemen.
+
+### Wie melde ich einen Fehler?
+Erstelle einfach ein Issue im Repository und beschreibe den Fehler möglichst präzise.
+
+### Wie kann ich neue Features vorschlagen?
+Erstelle ebenfalls ein Issue mit dem Label `enhancement`.
+
+<br>
+
+---
+
+<br>
+
+## 🤝 Mitwirken
+
+Möchtest du am Projekt mitarbeiten? Großartig!
+
+**Schritte zum Mitwirken:**
+- Forke das Repository
+- Erstelle einen neuen Branch: `git checkout -b dein-feature`
+- Implementiere deine Änderungen
+- Committe die Änderungen: `git commit -m "Dein Feature hinzugefügt"`
+- Pushe deinen Branch: `git push origin dein-feature`
+- Erstelle einen Pull Request auf GitHub
+
+<br>
+
+---
+
+<br>
+
+## 🚀 Zukunft von SysScope
+
+- SysScope entwickelt sich kontinuierlich weiter. <p>
+
+  - In Zukunft planen wir spannende neue Features, darunter eine automatisierte Snapshot-Planung, erweiterte Sicherheitsanalysen, eine interaktive Web-Oberfläche und verbesserte Performance für größere Systemlandschaften. <p>
+  
+    - Deine Vorschläge und dein Feedback sind essenziell, um SysScope stetig weiterzuentwickeln und deine Arbeit effizienter, sicherer und angenehmer zu gestalten. Sei ein Teil dieser Reise und gestalte mit uns die Zukunft von SysScope!
+
+<br>
+
+---
+
+<br>
+
+## 📜 Lizenz
+
+Dieses Projekt steht unter der **MIT-Lizenz**. 
+- Weitere Details findest du in der Datei [LICENNSE](https://github.com/bylickilabs/SysScope/blob/main/LICENSE).
