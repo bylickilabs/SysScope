@@ -1,6 +1,11 @@
 # SysScope
+  - SysScope ist eine Python-basierte Terminalanwendung, speziell entwickelt für Kali/Linux. Es bietet eine umfassende Systemüberwachung, Protokollierung und Analysefunktionen direkt aus dem Terminal heraus.
 
-SysScope ist eine Python-basierte Terminalanwendung, speziell entwickelt für Kali/Linux. Es bietet eine umfassende Systemüberwachung, Protokollierung und Analysefunktionen direkt aus dem Terminal heraus.
+<br>
+
+---
+
+<br>
 
 ## Inhaltsverzeichnis
 
@@ -9,6 +14,12 @@ SysScope ist eine Python-basierte Terminalanwendung, speziell entwickelt für Ka
 - [Installation](#installation)
 - [Benutzung](#benutzung)
 - [Abhängigkeiten](#abhängigkeiten)
+
+<br>
+
+---
+
+<br>
 
 ## Funktionen
 
@@ -28,6 +39,12 @@ SysScope ist eine Python-basierte Terminalanwendung, speziell entwickelt für Ka
 - **CPU-Auslastung anzeigen:** Zeigt die aktuelle CPU-Nutzung.
 - **RAM-Nutzung anzeigen:** Gibt Informationen zur RAM-Nutzung aus.
 
+<br>
+
+---
+
+<br>
+
 ## Ordnerstruktur
 
 ```
@@ -39,6 +56,12 @@ SysScope/
 ├── requirements.txt        # Benötigte Python-Abhängigkeiten
 └── sys_scope.py            # Hauptprogramm
 ```
+
+<br>
+
+---
+
+<br>
 
 ## Installation
 
@@ -68,9 +91,20 @@ pip install -r requirements.txt
 python sys_scope.py
 ```
 
-## Benutzung
+<br>
 
-Beim Start von SysScope öffnet sich ein interaktives Terminalmenü, aus dem du alle Funktionen bequem auswählen und ausführen kannst.
+---
+
+<br>
+
+## Benutzung
+   - Beim Start von SysScope öffnet sich ein interaktives Terminalmenü, aus dem du alle Funktionen bequem auswählen und ausführen kannst.
+
+<br>
+
+---
+
+<br>
 
 ## Abhängigkeiten
 
@@ -83,6 +117,11 @@ Installiere Abhängigkeiten direkt über:
 pip install colorama
 ```
 
-## Lizenz
+<br>
 
-Dieses Projekt steht unter der MIT-Lizenz. Weitere Informationen findest du in der Datei `LICENSE` im Repository.
+---
+
+<br>
+
+## Lizenz
+   - Dieses Projekt steht unter der MIT-Lizenz. Weitere Informationen findest du in der Datei `LICENSE` im Repository.
