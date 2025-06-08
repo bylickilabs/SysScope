@@ -1,0 +1,28 @@
+# Byte-kompilierte / optimierte Dateien
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Umgebungsspezifische Dateien
+.env
+venv/
+.envrc
+.env.local
+
+# Logs und Daten
+*.log
+*.json
+*.txt
+
+# Backup- und Snapshot-Verzeichnisse
+snapshots/
+backup/
+
+# Systemdateien
+.DS_Store
+Thumbs.db
+
+# Python spezifisch
+*.egg-info/
+dist/
+build/
