@@ -32,10 +32,6 @@ jobs:
          python -m pip install --upgrade pip
          pip install wheel setuptools    
 
-      - name: 🔨 Paket bauen
-        run: |
-         python setup.py sdist bdist_wheel
-
       - name: 🚦 Syntax & Installation testen
         run: |
          pip install dist/*.whl  
