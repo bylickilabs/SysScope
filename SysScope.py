@@ -15,7 +15,7 @@ LOG_FILE = "system_log.txt"
 os.makedirs(SNAPSHOT_DIR, exist_ok=True)
 os.makedirs(BACKUP_DIR, exist_ok=True)
 
-# Snapshot erstellen
+
 def create_snapshot():
     snapshot_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     snapshot_path = os.path.join(SNAPSHOT_DIR, f"snapshot_{snapshot_time}.txt")
@@ -25,7 +25,8 @@ def create_snapshot():
 
     save_event("Snapshot erstellt", snapshot_time)
 
-# Ereignis speichern
+
+
 def save_event(event, timestamp):
     try:
         with open(DATA_FILE, "r") as file:
@@ -38,7 +39,8 @@ def save_event(event, timestamp):
     with open(DATA_FILE, "w") as file:
         json.dump(data, file, indent=4)
 
-# Ereignisse anzeigen
+
+
 def show_events():
     try:
         with open(DATA_FILE, "r") as file:
@@ -48,13 +50,15 @@ def show_events():
     except (FileNotFoundError, json.JSONDecodeError):
         print(Fore.RED + "Keine Ereignisse gefunden.")
 
-# Systemkonfiguration prüfen
+
+
 def check_sysconfig():
     subprocess.run(["uname", "-a"])
     subprocess.run(["lsb_release", "-a"])
     subprocess.run(["df", "-h"])
 
-# Letzte Snapshots auflisten
+
+
 def list_snapshots():
     snapshots = os.listdir(SNAPSHOT_DIR)
     if snapshots:
@@ -64,7 +68,8 @@ def list_snapshots():
     else:
         print(Fore.RED + "Keine Snapshots vorhanden.")
 
-# Snapshot sichern
+
+
 def backup_snapshots():
     backup_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     backup_path = os.path.join(BACKUP_DIR, f"backup_{backup_time}")
@@ -72,15 +77,18 @@ def backup_snapshots():
     save_event("Snapshots gesichert", backup_time)
     print(Fore.GREEN + f"Snapshots erfolgreich nach {backup_path} gesichert.")
 
-# Speicherplatz prüfen
+
+
 def check_disk_usage():
     subprocess.run(["df", "-h"])
 
-# Prozessliste anzeigen
+
+
 def show_processes():
     subprocess.run(["ps", "aux"])
 
-# Systemlogs anzeigen
+
+
 def show_logs():
     try:
         with open(LOG_FILE, "r") as file:
@@ -88,35 +96,43 @@ def show_logs():
     except FileNotFoundError:
         print(Fore.RED + "Keine Logdatei gefunden.")
 
-# Netzwerkverbindungen anzeigen
+
+
 def show_network_connections():
     subprocess.run(["ss", "-tulnp"])
 
-# Nutzerinformationen anzeigen
+
+
 def show_users():
     subprocess.run(["who"])
 
-# Offene Ports prüfen
+
+
 def check_open_ports():
     subprocess.run(["nmap", "localhost"])
 
-# Firewall-Status anzeigen
+
+
 def show_firewall_status():
     subprocess.run(["ufw", "status"])
 
-# Aktuelle Systemzeit anzeigen
+
+
 def show_system_time():
     subprocess.run(["date"])
 
-# CPU-Auslastung anzeigen
+
+
 def show_cpu_usage():
     subprocess.run(["top", "-bn1"])
 
-# RAM-Nutzung anzeigen
+
+
 def show_ram_usage():
     subprocess.run(["free", "-h"])
 
-# Menü-Oberfläche
+
+
 def menu():
     while True:
         print(Fore.CYAN + Style.BRIGHT + "\nSysScope - System-Historien-Analyse")
@@ -152,6 +168,7 @@ def menu():
                 break
         else:
             print(Fore.RED + "Ungültige Option.")
+
 
 if __name__ == "__main__":
     menu()
