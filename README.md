@@ -4,6 +4,9 @@
 # SysScope
   - SysScope ist eine Python-basierte Terminalanwendung, speziell entwickelt für Kali/Linux. Es bietet eine umfassende Systemüberwachung, Protokollierung und Analysefunktionen direkt aus dem Terminal heraus.
 
+|![sysScope 1280x640](https://github.com/user-attachments/assets/c406bdf8-dcde-454c-9e14-077a52515f8b)|
+|---|
+
 <br>
 
 ---
