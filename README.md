@@ -1,2 +1,88 @@
 # SysScope
-SysScope – Terminalbasierte Linux-Systemanalyse und -verwaltung
+
+SysScope ist eine Python-basierte Terminalanwendung, speziell entwickelt für Kali/Linux. Es bietet eine umfassende Systemüberwachung, Protokollierung und Analysefunktionen direkt aus dem Terminal heraus.
+
+## Inhaltsverzeichnis
+
+- [Funktionen](#funktionen)
+- [Ordnerstruktur](#ordnerstruktur)
+- [Installation](#installation)
+- [Benutzung](#benutzung)
+- [Abhängigkeiten](#abhängigkeiten)
+
+## Funktionen
+
+- **Snapshot erstellen:** Speichert den Zustand der aktuell installierten Pakete.
+- **Ereignisse anzeigen:** Übersicht der gespeicherten Systemereignisse.
+- **Systemkonfiguration prüfen:** Zeigt Systeminformationen wie Kernel-Version und Speicherplatz.
+- **Snapshots auflisten:** Listet vorhandene Snapshots auf.
+- **Snapshots sichern:** Erstellt Backups der vorhandenen Snapshots.
+- **Speicherplatz prüfen:** Überprüft die Speichernutzung.
+- **Prozessliste anzeigen:** Zeigt eine Liste aller laufenden Prozesse.
+- **Systemlogs anzeigen:** Gibt den Inhalt der Systemlogs aus.
+- **Netzwerkverbindungen anzeigen:** Zeigt aktive Netzwerkverbindungen.
+- **Nutzerinformationen anzeigen:** Gibt Informationen zu aktuellen Nutzern.
+- **Offene Ports prüfen:** Prüft auf offene Netzwerkports.
+- **Firewall-Status anzeigen:** Zeigt den Status der Firewall an.
+- **Aktuelle Systemzeit anzeigen:** Gibt die aktuelle Systemzeit aus.
+- **CPU-Auslastung anzeigen:** Zeigt die aktuelle CPU-Nutzung.
+- **RAM-Nutzung anzeigen:** Gibt Informationen zur RAM-Nutzung aus.
+
+## Ordnerstruktur
+
+```
+SysScope/
+├── backup/                 # Gesicherte Snapshots
+├── snapshots/              # Erstellte Snapshots
+├── .gitignore              # Git Ignore-Datei
+├── README.md               # Dokumentation
+├── requirements.txt        # Benötigte Python-Abhängigkeiten
+└── sys_scope.py            # Hauptprogramm
+```
+
+## Installation
+
+### Schritt 1: Repository klonen
+
+```bash
+git clone <Repository-URL>
+cd SysScope
+```
+
+### Schritt 2: Virtuelle Umgebung erstellen und aktivieren (optional, aber empfohlen)
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### Schritt 3: Abhängigkeiten installieren
+
+```bash
+pip install -r requirements.txt
+```
+
+### Schritt 4: Programm ausführen
+
+```bash
+python sys_scope.py
+```
+
+## Benutzung
+
+Beim Start von SysScope öffnet sich ein interaktives Terminalmenü, aus dem du alle Funktionen bequem auswählen und ausführen kannst.
+
+## Abhängigkeiten
+
+- Python 3.x
+- colorama
+
+Installiere Abhängigkeiten direkt über:
+
+```bash
+pip install colorama
+```
+
+## Lizenz
+
+Dieses Projekt steht unter der MIT-Lizenz. Weitere Informationen findest du in der Datei `LICENSE` im Repository.
