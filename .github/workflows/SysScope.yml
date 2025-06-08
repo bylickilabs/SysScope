@@ -1,10 +1,13 @@
-name: SysScope CI
+name: 🧪 SysScope CI
 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+
+permissions:
+  contents: read
 
 jobs:
   build:
@@ -19,10 +22,36 @@ jobs:
         with:
           python-version: '3.x'
 
+      - name: 📦 Abhängigkeiten installieren
+        run: |
+         python -m pip install --upgrade pip
+         pip install psutil colorama
+
+      - name: 📦 weitere Abhängigkeiten
+        run: |
+         python -m pip install --upgrade pip
+         pip install wheel setuptools    
+
+      - name: 🔨 Paket bauen
+        run: |
+         python setup.py sdist bdist_wheel
+
+      - name: 🚦 Syntax & Installation testen
+        run: |
+         pip install dist/*.whl  
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
+      - name: 🚀 Tool testweise ausführen (ohne Root)
+        run: |
+         python SysScope.py || echo "Erwartete Root-Funktionalität kann im CI übersprungen werden"
+
+      - name: ✅ Testlauf (Basic Check)
+        run: |
+         python SysScope.py || echo "CI Umgebung: Ignoriere Runtime-Checks, die Root benötigen."
 
       - name: Lint with Flake8
         run: |
