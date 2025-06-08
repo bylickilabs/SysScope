@@ -14,6 +14,7 @@
 - [Installation](#installation)
 - [Benutzung](#benutzung)
 - [Abhängigkeiten](#abhängigkeiten)
+- [Lizenz](#lizenz)
 
 <br>
 
