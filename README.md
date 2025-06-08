@@ -1,4 +1,4 @@
-|![SysScope](https://github.com/bylickilabs/SysScope/actions/workflows/python-app.yml/badge.svg)|![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)|
+|![SysScope](https://github.com/bylickilabs/SysScope/actions/workflows/SysScope.yml/badge.svg)|![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)|
 |---|---|
 
 # SysScope
