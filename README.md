@@ -1,3 +1,6 @@
+|![Python Anwendung CI](https://github.com/<username>/SysScope/actions/workflows/python-app.yml/badge.svg)|![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)|
+|---|---|
+
 # SysScope
   - SysScope ist eine Python-basierte Terminalanwendung, speziell entwickelt für Kali/Linux. Es bietet eine umfassende Systemüberwachung, Protokollierung und Analysefunktionen direkt aus dem Terminal heraus.
 
