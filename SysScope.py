@@ -15,7 +15,6 @@ LOG_FILE = "system_log.txt"
 os.makedirs(SNAPSHOT_DIR, exist_ok=True)
 os.makedirs(BACKUP_DIR, exist_ok=True)
 
-
 def create_snapshot():
     snapshot_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     snapshot_path = os.path.join(SNAPSHOT_DIR, f"snapshot_{snapshot_time}.txt")
@@ -24,8 +23,6 @@ def create_snapshot():
         subprocess.run(["dpkg", "-l"], stdout=file)
 
     save_event("Snapshot erstellt", snapshot_time)
-
-
 
 def save_event(event, timestamp):
     try:
@@ -39,8 +36,6 @@ def save_event(event, timestamp):
     with open(DATA_FILE, "w") as file:
         json.dump(data, file, indent=4)
 
-
-
 def show_events():
     try:
         with open(DATA_FILE, "r") as file:
@@ -50,14 +45,10 @@ def show_events():
     except (FileNotFoundError, json.JSONDecodeError):
         print(Fore.RED + "Keine Ereignisse gefunden.")
 
-
-
 def check_sysconfig():
     subprocess.run(["uname", "-a"])
     subprocess.run(["lsb_release", "-a"])
     subprocess.run(["df", "-h"])
-
-
 
 def list_snapshots():
     snapshots = os.listdir(SNAPSHOT_DIR)
@@ -68,8 +59,6 @@ def list_snapshots():
     else:
         print(Fore.RED + "Keine Snapshots vorhanden.")
 
-
-
 def backup_snapshots():
     backup_time = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     backup_path = os.path.join(BACKUP_DIR, f"backup_{backup_time}")
@@ -77,17 +66,11 @@ def backup_snapshots():
     save_event("Snapshots gesichert", backup_time)
     print(Fore.GREEN + f"Snapshots erfolgreich nach {backup_path} gesichert.")
 
-
-
 def check_disk_usage():
     subprocess.run(["df", "-h"])
 
-
-
 def show_processes():
     subprocess.run(["ps", "aux"])
-
-
 
 def show_logs():
     try:
@@ -96,42 +79,26 @@ def show_logs():
     except FileNotFoundError:
         print(Fore.RED + "Keine Logdatei gefunden.")
 
-
-
 def show_network_connections():
     subprocess.run(["ss", "-tulnp"])
-
-
 
 def show_users():
     subprocess.run(["who"])
 
-
-
 def check_open_ports():
     subprocess.run(["nmap", "localhost"])
-
-
 
 def show_firewall_status():
     subprocess.run(["ufw", "status"])
 
-
-
 def show_system_time():
     subprocess.run(["date"])
-
-
 
 def show_cpu_usage():
     subprocess.run(["top", "-bn1"])
 
-
-
 def show_ram_usage():
     subprocess.run(["free", "-h"])
-
-
 
 def menu():
     while True:
@@ -152,15 +119,12 @@ def menu():
         print("14. CPU-Auslastung anzeigen")
         print("15. RAM-Nutzung anzeigen")
         print("16. Beenden")
-
         choice = input(Fore.YELLOW + "Wähle eine Option: ")
-
         functions = {'1': create_snapshot, '2': show_events, '3': check_sysconfig, '4': list_snapshots,
                      '5': backup_snapshots, '6': check_disk_usage, '7': show_processes, '8': show_logs,
                      '9': show_network_connections, '10': show_users, '11': check_open_ports,
                      '12': show_firewall_status, '13': show_system_time, '14': show_cpu_usage,
                      '15': show_ram_usage, '16': exit}
-
         if choice in functions:
             functions[choice]()
             if choice == '16':
@@ -168,7 +132,5 @@ def menu():
                 break
         else:
             print(Fore.RED + "Ungültige Option.")
-
-
 if __name__ == "__main__":
     menu()
