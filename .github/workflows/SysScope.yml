@@ -1,4 +1,4 @@
-name: SysScope CI
+name: SysScope
 
 on:
   push:
