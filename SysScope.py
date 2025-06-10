@@ -98,7 +98,10 @@ def check_open_ports():
 
 
 def show_firewall_status():
-    subprocess.run(["ufw", "status"])
+    try:
+        subprocess.run(["ufw", "status"], check = True, stderr=subprocess.DEVNULL, text=True)
+    except subprocess.CalledProcessError:
+        print(Fore.RED + "Um diese Aktion auszuführen, benötigen Sie Root-Rechte von Ihrem Betriebssystem. Führen Sie bitte „sudo python SysScope“ aus und wählen Sie 12. Firewall-Status anzeigen")
 
 
 def show_system_time():
