@@ -4,6 +4,7 @@ import subprocess
 import datetime
 import shutil
 from colorama import init, Fore, Style
+import sys
 
 init(autoreset=True)
 
@@ -99,9 +100,13 @@ def check_open_ports():
 
 def show_firewall_status():
     try:
-        subprocess.run(["ufw", "status"], check = True, stderr=subprocess.DEVNULL, text=True)
-    except subprocess.CalledProcessError:
-        print(Fore.RED + "Um diese Aktion auszuführen, benötigen Sie Root-Rechte von Ihrem Betriebssystem. Führen Sie bitte „sudo python SysScope“ aus und wählen Sie 12. Firewall-Status anzeigen")
+        result = subprocess.run(["ufw", "status"], capture_output=True, text=True, check=True)
+        print(result.stdout)
+        
+    except subprocess.CalledProcessError as e:
+        # Check if the error message is about missing root permissions
+        if "need to be root" in e.stderr.lower():
+            print(Fore.RED + "Um diese Aktion auszuführen, benötigen Sie Root-Rechte von Ihrem Betriebssystem. Führen Sie bitte „sudo python SysScope“ aus und wählen Sie 12. Firewall-Status anzeigen")
 
 
 def show_system_time():
@@ -129,7 +134,11 @@ def menu():
         for idx, option in enumerate(options, 1):
             print(f"{idx}. {option}")
 
-        choice = input(Fore.YELLOW + "Wähle eine Option: ")
+        if not sys.stdin.isatty():
+            print("CI environment detected – skipping interactive menu.")
+            choice = 12
+        else:
+            choice = input(Fore.YELLOW + "Wähle eine Option: ")
         functions = [
             create_snapshot, show_events, check_sysconfig, list_snapshots, backup_snapshots,
             check_disk_usage, show_processes, show_logs, show_network_connections, show_users,
